@@ -193,7 +193,7 @@ async function fetchAndParseCourses(academicYear, semesterIndex) {
                 const jsonText = await response.text();
                 const jsonData = JSON.parse(jsonText);
                 if (jsonData && jsonData.kbList) {
-                    const parsedCourses = parseJsonData(jsonData.kbList);
+                    const parsedCourses = parseJsonData(jsonData);
                     if (parsedCourses.length > 0) {
                         return {
                             courses: parsedCourses,
