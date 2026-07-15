@@ -5,7 +5,7 @@
  * https://github.com/Lucas04-nhr/StayUP-Calendar/blob/main/lib/src/pages/crawler/hust.dart
  */
 
-const HUST_COURSE_API = "http://mhub.hust.edu.cn/LsController/findNameCourse";
+const HUST_COURSE_API = new URL("/LsController/findNameCourse", location.origin).toString();
 const HUST_DEFAULT_SEMESTER_WEEKS = 20;
 
 function getDefaultTerm(now = new Date()) {
