@@ -136,7 +136,7 @@ async function fetchCourses(term) {
 
     const raw = await response.text();
     if (!raw.trim() || raw.trim().startsWith("<")) {
-        throw new Error("未读取到课表数据，请确认已登录移动服务中心");
+        throw new Error("未读取到课表数据，请确认已登录 HUB 系统并选择了正确的学期");
     }
 
     try {
