@@ -167,7 +167,7 @@ async function runImportFlow() {
             return;
         }
 
-        AndroidBridge.showToast(`正在获取 ${term.label}课表...`);
+        AndroidBridge.showToast(`正在获取 ${term.label} 课表...`);
         const courses = await fetchCourses(term);
         if (courses.length === 0) {
             AndroidBridge.showToast("该学期未查询到有效课程，请检查学期或登录状态");
