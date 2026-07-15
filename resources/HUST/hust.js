@@ -152,13 +152,12 @@ async function fetchCourses(term) {
 async function saveCourses(courses) {
     await window.AndroidBridgePromise.saveImportedCourses(JSON.stringify(courses));
 
-    const semesterTotalWeeks = courses.reduce((maximum, course) => {
-        const courseMaximum = course.weeks.length > 0 ? Math.max(...course.weeks) : 0;
-        return Math.max(maximum, courseMaximum);
-    }, HUST_DEFAULT_SEMESTER_WEEKS);
+    const semesterTotalWeeks = courses.reduce((maximum, course) => {  
+        const courseMaximum = course.weeks.length > 0 ? Math.max(...course.weeks) : 0;  
+        return Math.max(maximum, courseMaximum);  
+    }, HUST_DEFAULT_SEMESTER_WEEKS);  
 
-    await window.AndroidBridgePromise.saveCourseConfig(JSON.stringify({ semesterTotalWeeks }));
-}
+    await window.AndroidBridgePromise.saveCourseConfig(JSON.stringify({ semesterTotalWeeks }));  }
 
 async function runImportFlow() {
     try {
